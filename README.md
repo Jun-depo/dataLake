@@ -6,6 +6,7 @@ Sparkify is a startup company that collects user song play and song data as JSON
 
 They want to create data Lake using Spark-HDFS as the choice of the tools and save the resuting tables/dataframes in distributed parquet format. So, data analysts can access and read these files very fast for further queries and analysis. I will Spark to ingest data, and select right data to create tables following the dimensional model (star schema) that is optimized for joining tables and analytical queries.
 
+<img src="star_schema" style="width:600px;height:500px;">
 
 ## Data Lake
 
