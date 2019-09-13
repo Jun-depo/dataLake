@@ -26,7 +26,7 @@ An AWS configuration file contains AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY w
 
 ### (2) etl.py
 
-etl.py contains the program that can be used to extract data from song_data and log_data at s3 storage, then transform data to create tables.  Tables are later saved in distribute paquet files.  The detail steps are listed below.
+etl.py contains the program that can be used to extract data from song_data and log_data at s3 storage, then transform data to create 4 dimension tables and 1 fact table.  Tables are later saved in distribute paquet files.  The detail steps are listed below.
 
 #### (a) Import required libraries for running the program.
 
@@ -34,13 +34,10 @@ etl.py contains the program that can be used to extract data from song_data and 
 
 #### (c) Run etl.py 
 
-(1) I run Spark locally with data from "s3a://udacity-dend/song_data/A/A/A/\*.json" and "s3a://udacity-dend/log_data/2018/11/\*.json", save the result to my S3 storage s3a//jun-data-lake/. 
+(1) I run Spark locally with data from "s3a://udacity-dend/song_data/|*/\*/\*/\*.json" and "s3a://udacity-dend/log_data/2018/11/\*.json", save the result to my S3 storage s3a//jun-data-lake/. 
 
-When I run with "s3a://udacity-dend/log_data" and "s3a://udacity-dend/song_data", it was extremely slow. I didn't finish.  
+(2) I copied "s3a://udacity-dend/log_data" and "s3a://udacity-dend/song_data" to my local drive (with "aws s3 sync s3-directory local-directory" method).  I also run etl.py on the datasets ("s3a://udacity-dend/log_data" and "s3a://udacity-dend/song_data") locally and save the tables as parquet files. 
 
-(2) I copied "s3a://udacity-dend/log_data" and "s3a://udacity-dend/song_data" to my local drive (with "aws s3 sync s3-directory local-directory" method).  I run etl.py on the datasets ("s3a://udacity-dend/log_data" and "s3a://udacity-dend/song_data") locally and save the tables as parquet files. 
-
-    
 
 ## Example queries and results
 
